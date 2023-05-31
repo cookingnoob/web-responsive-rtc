@@ -1,0 +1,29 @@
+body{
+  margin: 0;
+}
+header{
+  display: flex;
+  justify-content: space-between;
+  border: 1px, solid, black;
+  background-color: aquamarine;
+}
+.left, .right{
+display: flex;
+gap: 10px;
+}
+nav{
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+nav > div {
+  height: 20px;
+  width: 200px;
+  border: 1px solid black;
+}
+main{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
