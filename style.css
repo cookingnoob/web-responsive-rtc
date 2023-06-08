@@ -1,25 +1,65 @@
-body{
-  margin: 0;
+@font-face {
+  font-family: Lato;
+  src: url(./Lato/Lato-Regular.ttf);
 }
+body{
+  font-family: Lato;
+  margin: 0;
+  padding: 0; 
+  box-sizing: border-box;
+}
+/* HEADER */
 header{
   display: flex;
   justify-content: space-between;
-  border: 1px, solid, black;
-  background-color: aquamarine;
+  align-items: center;
+  height: 40px;
+  border-bottom: 1px solid black;
 }
 .left, .right{
-display: flex;
-gap: 10px;
+  gap: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+  display: flex;
 }
+/* .dropdown1{
+  background-color: aquamarine;
+  width: 10px;
+}
+.dropdown1 > p{
+  color: rebeccapurple;
+  margin: 0;
+}
+.content1{
+  display: flex;
+  justify-content: space-around;
+  border: 1px solid black;
+  background-color: white;
+  z-index: 2;
+  width: 100px;
+  position: relative;
+}
+.submenu{
+ background-color: blue;
+ position: relative;
+} */
+.logo{
+  width: 60px;
+}
+/* NAV */
 nav{
   display: flex;
   justify-content: center;
   padding: 20px;
 }
-nav > div {
+nav > input {
   height: 20px;
   width: 200px;
+  border-radius: 5px;
   border: 1px solid black;
+}
+nav > button {
+  display: none;
 }
 main{
   display: flex;
@@ -28,39 +68,52 @@ main{
   align-items: center;
   gap: 10px;
 }
+/* PRIMER BANNER */
 .main-banner{
   width: 100%;
   height: 200px;
-  border: 1px solid black;
-  background-color: aqua;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
+.main-banner > img{
+  height: 200px;
+  
+}
+/* GRID DE OFERTAS */
 .ofertas{
   width: 100%;
-  background-color: coral;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  justify-items: center;
-  gap: 10px;
-  padding: 10px;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  justify-content: space-between;
+  padding-top: 5px;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 .ofertas > div {
-  border: 1px solid black;
-  width: 300px;
-  height: 300px;
   display: flex;
+  width: 100%;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-.ofertas > div:hover{
-  background-color: rgb(153, 49, 12);
+.ofertas > div > img{
+  object-fit: contain;
+  height: 180px;
+  width: 100%;
 }
+.ofertas > div > h3 {
+  font-size: 17px;
+  font-weight: 550;
+}
+/* SCROLLS DE COMPUTADORES */
 .scrollA{
-
+  width: 100%;
+  background-color: rgb(240, 240, 240);
+}
+.scrollA > h2 , .scrollA > button{
+  margin-left: 10px;
 }
 .orangeBtn{
   background-color: orange;
@@ -77,8 +130,134 @@ main{
   font-size: 17px;
   font-weight: 700;
 }
+.menuScroll{
+  overflow-x: scroll;
+  overflow-y: hidden;
+  display: flex;
+  flex-wrap: nowrap;
+}
+.menuScroll > li{
+  min-width: 300px;
+  height: 380px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  border-radius: 10px;
+}
+.menuScroll > li > img {
+  border-radius: 10px;
+  height: 180px;
+  width: 200px;
+  top: -50px;
+  margin-left: 40px;
+  position: relative;
+}
+.menuScroll > li > p {
+  font-size: 15px;
+  font-weight: lighter;
+}
+.menuScroll > ul{
+  margin-left: -20px;
+}
+.descuentoPorcentaje{
+  position: relative;
+  z-index: 1;
+  font-size: 15px;
+  background-color: red;
+  color: white;
+  width: 40px;
+  margin-left: 10px;
+  border-radius: 5px;
+  padding: 5px;
+}
+.precio{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.precio > h3{
+  color: red;
+  margin-top: 5px;
+  margin-left: 5px;
+}
+.precio > h4 {
+  font-size: 12px;
+  font-weight: 100;
+  text-decoration: line-through;
+}
+.stars{
+  display: flex;
+}
+.blog{
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ align-items: center;
+ border-bottom: 1px solid lightgray;
+ box-shadow: ;
+}
+.blog > img {
+  width: 90%;
+  position: relative;
+}
+.blogTextWrapper{
+  background-color: white ;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  top: -50px;
+}
+.blogTextWrapper > h3,
+.blogTextWrapper > h4 {
+  margin: 5px;
+}
+.blogTextWrapper > h3 {
+  font-weight: 800;
+}
+.blogTextWrapper > h4{
+  font-size: 14px;
+  font-weight: 100px;
+}
+.blogTextWrapper:nth-child(3):hover{
+  cursor: pointer;
+}
+.faq-wrapper {
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+ 
+  margin-left: 10px;
+}
+.faq-wrapper > h4 {
+ width: 100%; 
+ border-bottom: 1px solid black;
+}
+.dropdown,
+.content1,
+.submenu {
+  visibility: hidden;
+  height: 0;
+  overflow: hidden;
+  transition: height 0.3s ease;
+}
+.faq-wrapper:hover .dropdown,
+.dropdown1:hover .content1,
+.content1:hover .submenu{
+  visibility: visible;
+  height: auto;
+}
+
 footer{
   display: flex;
   justify-content: center;
-  background-color: brown ;
+}
+
+footer {
+  background-color: rgb(201, 175, 226);
+  color: whitesmoke;
+  display: flex;
+
 }
