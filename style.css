@@ -4,13 +4,33 @@
 }
 :root{
   --gris-principal: rgb(240, 240, 240);
+  --violeta-footer: rgb(201, 175, 226);
+  --rojo-descuento: rgb(142, 4, 4);
+  --naranja-boton: rgb(253, 178, 38);
 }
-body{
-  font-family: Lato;
+*{
   box-sizing: border-box;
   margin: 0;
   padding: 0; 
-  overflow-x: auto;
+}
+body{
+  font-family: Lato;
+}
+h1{
+  font-size: 50px;
+}
+h2{
+  font-size: 30px;
+}
+h3{
+  font-size: 25px;
+}
+h4{
+  font-size: 15px;
+  font-weight: lighter;
+}
+p{
+  font-size: 12px;
 }
 header{
   display: flex;
@@ -64,6 +84,7 @@ nav > button {
   grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
   justify-content: space-between;
   gap: 10px;
+  margin-bottom: 20px;
 }
 .ofertas > div {
   display: flex;
@@ -83,13 +104,14 @@ nav > button {
 /* SCROLLS DE COMPUTADORES */
 .scrollA{
   width: 100%;
-  background-color: var(--gris-principal)
+  background-color: var(--gris-principal);
+  padding: 20px;
 }
 .scrollA > h2 , .scrollA > button{
   margin-left: 10px;
 }
 .orangeBtn{
-  background-color: orange;
+  background-color: var(--naranja-boton);
   color: whitesmoke;
   border: none;
   height: 50px;
@@ -100,8 +122,6 @@ nav > button {
   list-style: none;
   display: flex;
   gap: 15px;
-  font-size: 17px;
-  font-weight: 700;
 }
 .menuScroll{
   overflow-x: scroll;
@@ -117,14 +137,15 @@ nav > button {
   flex-direction: column;
   justify-content: flex-start;
   border-radius: 10px;
+  margin-top: 5px;
 }
 .menuScroll > li > img {
   border-radius: 10px;
   height: 180px;
   width: 200px;
-  top: -50px;
   margin-left: 40px;
   position: relative;
+  margin-bottom: 50px;
 }
 .menuScroll > li > p {
   font-size: 15px;
@@ -136,10 +157,10 @@ nav > button {
 .descuentoPorcentaje{
   position: relative;
   z-index: 1;
-  font-size: 15px;
-  background-color: red;
+  background-color: var(--rojo-descuento); 
   color: white;
-  width: 40px;
+  width: 50px;
+  margin-top: 20px;
   margin-left: 10px;
   border-radius: 5px;
   padding: 5px;
@@ -155,8 +176,6 @@ nav > button {
   margin-left: 5px;
 }
 .precio > h4 {
-  font-size: 12px;
-  font-weight: 100;
   text-decoration: line-through;
 }
 .stars{
@@ -201,7 +220,6 @@ nav > button {
   position: relative;
   display: flex;
   flex-direction: column;
-  
 }
 .faq-wrapper > h4 {
  width: 100%; 
@@ -228,7 +246,7 @@ footer{
 }
 
 footer {
-  background-color: rgb(201, 175, 226);
+  background-color: var(--violeta-footer);
   color: var(--gris-principal);
   display: flex;
 }
